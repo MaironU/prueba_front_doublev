@@ -1,0 +1,14 @@
+<div class="d-flex flex-column align-items-center">
+  <h2 class="text-center py-3">Información del usuario</h2>
+  <div *ngIf="user">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" [src]="user.avatar_url" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{user.login}}</h5>
+        <h5 class="card-title">Id: {{user.id}}</h5>
+        <a class="btn btn-danger my-2" routerLink="/users">Volver</a>
+      </div>
+    </div>
+  </div>
+</div>
+

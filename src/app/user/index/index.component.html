@@ -1,0 +1,47 @@
+
+<div class="navbar navbar-dark bg-dark">
+  <a href="" class="navbar-brand mx-3">
+    Prueba Double v Partners
+  </a>
+</div>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-6 p-3">
+      <h3>Buscar usuario</h3>
+      <form action="" [formGroup]="formGroup" novalidate (ngSubmit)="filterObservable()">
+        <div class="d-flex">
+          <div class="from-group">
+            <input type="text" class="form-control" name="word" formControlName="word" placeholder="Nombre" required ngModel>
+          </div>
+
+          <div class="from-group mx-1">
+            <button type="submit" [disabled]="formGroup.invalid" class="btn btn-dark">Buscar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6 p-3">
+      <h3>Lista de usuarios</h3>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users ">
+              <td>{{user.id}}</td>
+              <td>{{user.login}}</td>
+              <td>
+                <a class="btn btn-danger" [routerLink]="['/details', user.login]">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
